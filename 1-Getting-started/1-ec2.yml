@@ -1,11 +1,10 @@
-
 AWSTemplateFormatVersion: "2010-09-09"
 Description: A sample template
 Resources:
   MyEC2Instance:
     Type: "AWS::EC2::Instance"
     Properties: 
-      ImageId: "ami-0022f774911c1d690"
+      ImageId: "ami-0d406e26e5ad4de53"
       InstanceType: t2.micro      
       BlockDeviceMappings:
         -
@@ -14,3 +13,8 @@ Resources:
             VolumeType: gp2            
             DeleteOnTermination: true
             VolumeSize: 8
+      Tags:
+        - Key: Name
+          Value: demo-ec2
+        - Key: createdBy
+          Value: DevOps Team
